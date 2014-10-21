@@ -21,9 +21,9 @@ public class HBaseTestCase {
 	  static HBaseConfiguration cfg = null;
 	    static {
 	        Configuration HBASE_CONFIG = new Configuration();
-	        HBASE_CONFIG.set("hbase.zookeeper.quorum", "123.57.3.193");
+	        HBASE_CONFIG.set("hbase.zookeeper.quorum", "iZ25d42v800Z");
 	        HBASE_CONFIG.set("hbase.zookeeper.property.clientPort", "2181");
-	        HBASE_CONFIG.set("hbase.master", "123.57.3.193:65000");  
+	        HBASE_CONFIG.set("hbase.master", "iZ25d42v800Z:65010");  
 	        cfg = new HBaseConfiguration(HBASE_CONFIG);
 	    }
 	/**
@@ -38,9 +38,9 @@ public class HBaseTestCase {
 			HBaseTestCase.put(tablename, "row1", columnFamily, "cl1", "hello world!");
 			HBaseTestCase.get(tablename, "row1");
 			HBaseTestCase.scan(tablename);
-			if(true==HBaseTestCase.delete(tablename)) {
-				System.out.println("Delete table:"+tablename+" success!");
-			}
+//			if(true==HBaseTestCase.delete(tablename)) {
+//				System.out.println("Delete table:"+tablename+" success!");
+//			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
